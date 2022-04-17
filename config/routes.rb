@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resourses :doctors
-  resourses :patients
-  resourses :apointments
+
+  resources :doctors
+  resources :patients
+  resources :apointments
 end
