@@ -23,6 +23,7 @@ class DoctorsController < ApplicationController
   def update
     @doctor = Doctor.find(params[:id])
     @doctor = Doctor.update(doctor_params)
+    redirect_to doctor_path @doctor
   end
 
   private

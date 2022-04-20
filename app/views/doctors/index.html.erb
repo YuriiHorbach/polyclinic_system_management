@@ -5,3 +5,5 @@
 <%@doctors.each do |doc|%>
   <p><%= link_to doc.first_name, doc %> </p>
 <% end %>
+
+<%= link_to "New doctor", new_doctor_path %>
