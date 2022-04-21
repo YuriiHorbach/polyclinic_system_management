@@ -26,6 +26,12 @@ class DoctorsController < ApplicationController
     redirect_to doctor_path @doctor
   end
 
+  def destroy
+    @doctor = Doctor.find(params[:id])
+    @doctor.destroy
+    render json: "Successfully deleted."
+  end
+
   private
 
   def doctor_params 
