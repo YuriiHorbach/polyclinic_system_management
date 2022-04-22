@@ -13,6 +13,13 @@
       <div><%= message %></div>
     <% end %>
   </div>
+  <div>
+    <%= form.label :category %><br>
+    <%= form.collection_select(:category_id, Doctor.all, :id, :full_name,
+      { prompt: "Choice your doctor from a list" }, {multiple: true}) %>
+  </div>
+
+
  
   <br>
   <%= form.submit %>
