@@ -5,15 +5,17 @@ class PatientsController < ApplicationController
 
   def show 
     @patient = Patient.find(params[:id])
+    # render json: @patient, include: [:doctors]
   end
 
   def new 
     @patient = Patient.new 
+    @doctors = Doctor.all
   end
 
   def create 
     @patient = Patient.create(patient_params)
-    redirect_to patients_path 
+    redirect_to patients_path @patient
   end
 
   def edit 
@@ -35,6 +37,6 @@ class PatientsController < ApplicationController
   private
 
   def patient_params 
-    params.require(:patient).permit(:first_name, :last_name, :speciality, :full_name, doctor_ids:[])
+    params.require(:patient).permit(:first_name, :last_name, :speciality, :full_name, { doctor_ids:[] })
   end
 end
