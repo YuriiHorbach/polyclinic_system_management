@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  doctor_id: 1
-  patient_id: 1
-  apointment_date: 2022-04-13 22:28:53
-
-two:
-  doctor_id: 1
-  patient_id: 1
-  apointment_date: 2022-04-13 22:28:53
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value
