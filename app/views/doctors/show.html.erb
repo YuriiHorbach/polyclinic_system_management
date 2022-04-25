@@ -2,3 +2,9 @@
 <p>Last name: <%= @doctor.last_name%></p>
 <p>Speciality: <%= @doctor.speciality%></p>
 
+<p>Patients:</p>
+<%= render @doctor.patients%> 
+
+<ul style="list-style:none;">
+  <li ><%= link_to "Edit", edit_doctor_path(@doctor)%></li>
+</ul>
