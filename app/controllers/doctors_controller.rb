@@ -22,8 +22,12 @@ class DoctorsController < ApplicationController
   
   def update
     @doctor = Doctor.find(params[:id])
-    @doctor = Doctor.update(doctor_params)
-    redirect_to doctor_path @doctor
+    if @doctor.update(doctor_params)
+      flash[:notice] = "Updated"
+      redirect_to doctors_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -35,6 +39,6 @@ class DoctorsController < ApplicationController
   private
 
   def doctor_params 
-    params.require(:doctor).permit(:first_name, :last_name, :speciality, :full_name)
+    params.require(:doctor).permit(:first_name, :full_name, :last_name, patient_ids: [])
   end
 end

@@ -1,10 +1,14 @@
 <h1>All doctors</h1>
 
+<%= link_to "New doctor", new_doctor_path %>
+<hr>
+
 <%@doctors.each do |doc|%>
   <p><%= link_to doc.full_name, doc %> |
   <%= link_to "Destroy", doctor_path(doc),
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %> </p>
+                  data: { confirm: "Are you sure?" } %> |
+  <%= link_to "Edit", edit_doctor_path(doc)%> </p>
 <% end %>
-
+<hr>
 <%= link_to "New doctor", new_doctor_path %>

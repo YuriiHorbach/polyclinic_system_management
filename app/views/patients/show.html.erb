@@ -2,9 +2,16 @@
 <p>Last name: <%= @patient.last_name%></p>
 
 <p>Doctors:</p>
-<%= render @patient.doctors%> doctor
+<% if @patient.doctors.any? %>
+  <%@patient.doctors.each do |doc| %>
+    <%= doc.full_name %>
+    <br>
+  <% end %> 
 
-<ul style="list-style:none;">
+<% end %>
+
+<ul style="list-style:none; padding: 0;">
   <li ><%= link_to "Edit", edit_patient_path(@patient)%></li>
 </ul>
+
 

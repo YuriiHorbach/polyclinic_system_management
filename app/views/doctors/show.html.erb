@@ -3,8 +3,13 @@
 <p>Speciality: <%= @doctor.speciality%></p>
 
 <p>Patients:</p>
-<%= render @doctor.patients%> 
+<% if @doctor.patients.any? %>
+  <% @doctor.patients.each do |patient| %>
+    <%= patient.full_name%>
+    <br>
+  <% end %>  
+<% end %>
 
-<ul style="list-style:none;">
+<ul style="list-style:none; padding: 0">
   <li ><%= link_to "Edit", edit_doctor_path(@doctor)%></li>
 </ul>

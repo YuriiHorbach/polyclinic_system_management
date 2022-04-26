@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <nav%>
+      <%= link_to "Patients", patients_path%> |
+      <%= link_to "Doctors", doctors_path%> |
+
+    </nav>
     <%= yield %>
   </body>
 </html>

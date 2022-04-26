@@ -21,7 +21,7 @@
     <% end %>
   </div>
   <hr>
-  <br>
+  <br>  
    <div>
     <%= form.label :patient_ids, 'Patients' %><br>
     <%= form.collection_select(:patient_ids , Patient.all, :id, :full_name,
