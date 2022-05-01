@@ -1,4 +1,6 @@
 class Doctor < ApplicationRecord
+  belongs_to :Uuser 
+
   has_many :apointments
   has_many :patients, through: :apointments
 
