@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   enum role: {patient:0, doctor:1, admin:2}
 
+  def full_name
+    "#{name} #{surname}"
+  end
+
   # def roles=(roles)
   #   roles = [*roles].map { |r| r.to_sym }
   #   self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)

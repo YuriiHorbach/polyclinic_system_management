@@ -2,12 +2,12 @@
 
 <%= link_to "New patient", new_patient_path %>
 <hr>
-<%@patients.each do |patient|%>
-  <p><%= link_to patient.full_name, patient %> |
-  <%= link_to "Destroy", patient_path(patient),
+<%@users.each do |user_patient|%>
+  <p><%= link_to user.role[0].full_name, user %> |
+  <%= link_to "Destroy", user_path(user.role[0]),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>  | 
-  <%= link_to "Edit", edit_patient_path(patient)%> </p>
+  <%= link_to "Edit", edit_user_path(user.role[0])%> </p>
 <% end %>
 <hr>
 <%= link_to "New patient", new_patient_path %>
